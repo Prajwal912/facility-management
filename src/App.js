@@ -8,6 +8,7 @@ import Events from './components/Events';
 import Header from './components/Header';
 import Categories from './components/Categories';
 import Navtabs from './components/Navtabs';
+import Menu from './components/Menu';
 
 
 
@@ -44,6 +45,7 @@ function App() {
   return (
     <>
       <Header />
+      <Menu />
       <Navtabs />
       <div className='mx-2 my-3'>
         <div className='ml-2'>Recent</div>
@@ -79,7 +81,7 @@ function App() {
           <p className='text-[#4D79EB] cursor-pointer	'>View all</p>
         </div>
         <div className="ml-2 text-[#5F5F5F] text-[17px] mb-5">See what's popular across thousands of products.</div>
-        <div className='flex  overflow-auto ml-[12px]'>
+        <div className='flex sm:overflow-none sm:flex-wrap  overflow-auto ml-[12px]'>
           {featureArr?.map(i => {
             return <Auctions />
           })}
