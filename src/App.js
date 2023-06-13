@@ -7,6 +7,7 @@ import CardOverlay from './components/Card-overlay';
 import Events from './components/Events';
 import Header from './components/Header';
 import Categories from './components/Categories';
+import Navtabs from './components/Navtabs';
 
 
 
@@ -43,6 +44,7 @@ function App() {
   return (
     <>
       <Header />
+      <Navtabs />
       <div className='mx-2 my-3'>
         <div className='ml-2'>Recent</div>
         <div className='flex flex-wrap'>
