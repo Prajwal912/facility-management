@@ -80,9 +80,9 @@ function App() {
 
 {/* product listing page */}
       <div className='mx-4 my-3'>
-      {/* box-shadow: 0px 4px 20px 0px #0000001A; */}
+      {/*  0px 4px 20px rgba(0, 0, 0, 0.1); */}
 
-        <div className='flex flex-wrap ml-[12px] shadow-[0px 4px 20px 0px #0000001A]'>
+        <div className='flex flex-wrap ml-[12px] shadow-0px-4px-20px-rgba(0, 0, 0, 0.1)'>
           {productArr?.map(i => {
             return <Auctions />
           })}
