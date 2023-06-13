@@ -10,6 +10,9 @@ import Categories from './components/Categories';
 import Navtabs from './components/Navtabs';
 import Menu from './components/Menu';
 import Capsule from './components/Capsule';
+import FacultyText from './components/FacultyText';
+import Carousel from './components/Carousel';
+
 
 
 
@@ -48,14 +51,24 @@ function App() {
   return (
     <>
       <Header />
+
+<div className='flex justify-center'>
+      <FacultyText />
+</div>
+
+
       <div className='flex ml-4 sm:ml-0 sm:justify-center flex-wrap my-2 border-b-2 pb-2'>
         {ctaData?.map(i => {
           return <Capsule title={i} />
         })}
       </div>
-
+      
       <Menu />
       <Navtabs />
+
+       <Carousel />
+
+
       <div className='mx-2 my-3'>
         <div className='ml-2'>Recent</div>
         <div className='flex flex-wrap'>
