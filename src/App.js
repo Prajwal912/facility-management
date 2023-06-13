@@ -5,6 +5,7 @@ import Accordion from './components/accordion';
 import Auctions from './components/Auctions';
 import CardOverlay from './components/Card-overlay';
 import Events from './components/Events';
+import Header from './components/Header';
 
 
 
@@ -15,12 +16,13 @@ function App() {
   let featureArr = Array.from({ length: 15 }, (value, index) => index);
   let serviceArr = Array.from({ length: 8 }, (value, index) => index);
   let productArr = Array.from({ length: 6 }, (value, index) => index);
-  let overlayArr = Array.from({ length: 3 }, (value, index) => index);
   let featuredArr = Array.from({ length: 1 }, (value, index) => index);
+  let overlayArr=['Request Anything', 'Create Events', 'Auction Items']
   
 
   return (
     <>
+    <Header />
       <div className='mx-2 my-3'>
         <div className='ml-2'>Recent</div>
         <div className='flex flex-wrap'>
@@ -95,9 +97,9 @@ function App() {
 
 {/* overlay div */}
       <div className='mx-4 my-3'>
-        <div className='flex flex-wrap ml-[12px]'>
-          {overlayArr?.map(i => {
-            return <CardOverlay />
+        <div className='flex ml-[12px]'>
+          {overlayArr?.map(item => {
+            return <CardOverlay title={item} />
           })}
         </div>
       </div>
