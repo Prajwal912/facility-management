@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Accordion from "./accordion";
 
-const Header = () => {
+const Header = ({setHideCaro}) => {
   const [open, setOpen] = useState(false);
 
   const accordionData = [
@@ -33,6 +33,7 @@ const Header = () => {
         className="z-50 flex relative w-8 h-[1.3rem] flex-col justify-between items-center cursor-pointer"
         onClick={() => {
           setOpen(!open);
+          setHideCaro(!open)
         }}
       >
         {/* hamburger button */}

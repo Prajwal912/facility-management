@@ -4,7 +4,6 @@ export default function Accordion({data}) {
 
    
     const [expanded, setExpanded] = useState(false);
-    console.log(data)
 
     return (
         <div onClick={() => setExpanded(!expanded)} className="flex flex-col p-3 border-b cursor-pointer ">

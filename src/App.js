@@ -12,6 +12,7 @@ import Menu from './components/Menu';
 import Capsule from './components/Capsule';
 import FacultyText from './components/FacultyText';
 import Carousel from './components/Carousel';
+import { useState } from 'react';
 
 
 
@@ -46,15 +47,17 @@ function App() {
   ]
 
   const ctaData = ["All", "Maintainance services", "Work wear & Uniforms"]
+  const [hideCaro, setHideCaro] = useState(false)
+  
 
 
   return (
     <>
-      <Header />
+      <Header setHideCaro={setHideCaro} />
 
-<div className='flex justify-center'>
-      <FacultyText />
-</div>
+      <div className='flex justify-center'>
+        <FacultyText />
+      </div>
 
 
       <div className='flex ml-4 sm:ml-0 sm:justify-center flex-wrap my-2 border-b-2 pb-2'>
@@ -62,11 +65,11 @@ function App() {
           return <Capsule title={i} />
         })}
       </div>
-      
+
       <Menu />
       <Navtabs />
 
-       <Carousel />
+      {!hideCaro && <Carousel />}
 
 
       <div className='mx-2 my-3'>
