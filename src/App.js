@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Categories from './components/Categories';
 import Navtabs from './components/Navtabs';
 import Menu from './components/Menu';
+import Capsule from './components/Capsule';
 
 
 
@@ -25,26 +26,34 @@ function App() {
   const categoriesData = [
     {
       img: "/assets/clarity_building-line.png",
-      title:"Facility Management"
+      title: "Facility Management"
     },
     {
       img: "/assets/logistic.png",
-      title:"Logistic"
+      title: "Logistic"
     },
     {
       img: "/assets/construction.png",
-      title:"Construction"
+      title: "Construction"
     },
     {
       img: "/assets/chemicals.png",
-      title:"chemicals"
+      title: "chemicals"
     }
   ]
+
+  const ctaData = ["All", "Maintainance services", "Work wear & Uniforms"]
 
 
   return (
     <>
       <Header />
+      <div className='flex ml-4 sm:ml-0 sm:justify-center flex-wrap my-2 border-b-2 pb-2'>
+        {ctaData?.map(i => {
+          return <Capsule title={i} />
+        })}
+      </div>
+
       <Menu />
       <Navtabs />
       <div className='mx-2 my-3'>
@@ -137,7 +146,7 @@ function App() {
         </div>
         <div className='flex overflow-auto mt-5'>
           {categoriesData?.map(i => {
-            return <Categories data={i}/>
+            return <Categories data={i} />
           })}
         </div>
       </div>
