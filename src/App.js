@@ -11,7 +11,6 @@ import Carousel from "./components/Carousel";
 import { useState } from "react";
 import Shop from "./Shop";
 import Products from "./Products";
-import Form from "./components/Form";
 
 function App() {
   let auctionArr = Array.from({ length: 8 }, (value, index) => index);
