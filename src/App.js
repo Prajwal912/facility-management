@@ -127,7 +127,7 @@ function App() {
             <div className="ml-2 text-[#5F5F5F] text-[17px] mb-5">
               See what's popular across thousands of Events.
             </div>
-            <div className="flex overflow-auto ml-[12px]">
+            <div className="flex overflow-auto sm:overflow-hidden ml-[12px]">
               {featuredArr?.map((i) => {
                 return <Events />;
               })}
