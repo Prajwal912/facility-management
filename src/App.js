@@ -11,6 +11,7 @@ import Carousel from './components/Carousel';
 import { useState } from 'react';
 import Shop from './Shop';
 import Products from './Products';
+import Form from './components/Form';
 
 
 
@@ -43,7 +44,7 @@ function App() {
   ]
 
   const [hideCaro, setHideCaro] = useState(false)
-  
+
 
 
   return (
@@ -52,8 +53,8 @@ function App() {
       <Products />
       <Shop />
 
-       {/* overlay div */}
-       <div className='mx-4 mb-20 mt-5'>
+      {/* overlay div */}
+      <div className='mx-4 mb-20 mt-5'>
         <div className='flex ml-[12px]'>
           {overlayArr?.map(item => {
             return <CardOverlay title={item} />
@@ -65,8 +66,8 @@ function App() {
       {!hideCaro && <Carousel />}
 
 
-        {/* categories */}
-        <div className='mx-4 mb-10 mt-5'>
+      {/* categories */}
+      <div className='mx-4 mb-10 mt-5'>
         <div className='ml-2 flex justify-between mx-4 mt-3'>
           <p className='font-medium text-[22px]'>Explore Popular Categories</p>
           <p className='text-[#4D79EB] cursor-pointer'>View all</p>
@@ -120,12 +121,6 @@ function App() {
         </div>
       </div>
 
-      
-     
-
-
-    
-
 
       {/* featured events */}
       <div className='mx-4 mb-20 mt-5'>
@@ -140,7 +135,8 @@ function App() {
         </div>
       </div>
 
-
+      <Form />
+      
     </>
   );
 }
