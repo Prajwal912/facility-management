@@ -88,7 +88,7 @@ const Header = ({ setHideCaro }) => {
       <div
         className={`absolute top-0 left-0 h-screen w-screen bg-white transform ${
           open ? "-translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out filter drop-shadow-md `}
+        } transition-transform duration-300 ease-in-out filter drop-shadow-md fixed`}
       >
         <div className="mt-16 px-5 overflow-x-hidden w-fit">
           {accordionData?.map((item) => {
