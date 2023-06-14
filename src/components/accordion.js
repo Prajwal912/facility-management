@@ -11,7 +11,7 @@ export default function Accordion({data}) {
                 <p className={`custom-font text-sm sm:text-lg flex-auto`}>
                     {data.title}
                     </p>
-                <img className={`flex-none ${expanded && "rotate-180"}  duration-300 ease-in-out`} w-3 src="/Assets/icon-arrow-down.svg" alt="arrow down" />
+                <img className={`flex-none ${expanded && "rotate-180"}  duration-300 ease-in-out`} w-3 src="/assets/icon-arrow-down.svg" alt="arrow down" />
             </div>
             <div className={`transition-max-height text-sm sm:text-sm duration-700 ease-in-out overflow-hidden ${expanded ? "max-h-20" : "max-h-0"}`}>
                 <p>{data.desc}</p>
