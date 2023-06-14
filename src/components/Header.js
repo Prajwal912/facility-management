@@ -55,7 +55,7 @@ const Header = ({ setHideCaro }) => {
           </div>}
         </div>
 
-        <div className="flex relative">
+        <div className="flex relative justify-between">
         <button className={`flex px-6 py-[0.10rem] border-[#C4C4C4] bg-[#E7EDFE] rounded-[1rem] border-2 mr-2 sm:ml-3`}>
            Products <span className="my-[0.6rem] mx-2"><img src="/assets/downarrow.png" className="h-[9px]" alt="" /></span>
         </button>

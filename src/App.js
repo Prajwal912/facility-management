@@ -1,29 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-import Cards from './components/cards';
+
 import Accordion from './components/accordion';
 import Auctions from './components/Auctions';
 import CardOverlay from './components/Card-overlay';
 import Events from './components/Events';
 import Header from './components/Header';
 import Categories from './components/Categories';
-import Navtabs from './components/Navtabs';
-import Menu from './components/Menu';
-import Capsule from './components/Capsule';
-import FacultyText from './components/FacultyText';
 import Carousel from './components/Carousel';
 import { useState } from 'react';
+import Shop from './Shop';
+import Products from './Products';
 
 
 
 
 function App() {
 
-  let cardsArr = Array.from({ length: 8 }, (value, index) => index);
   let auctionArr = Array.from({ length: 8 }, (value, index) => index);
   let featureArr = Array.from({ length: 9 }, (value, index) => index);
   let serviceArr = Array.from({ length: 8 }, (value, index) => index);
-  let productArr = Array.from({ length: 6 }, (value, index) => index);
   let featuredArr = Array.from({ length: 3 }, (value, index) => index);
   let overlayArr = ['Request Anything', 'Create Events', 'Auction Items'];
 
@@ -46,7 +42,6 @@ function App() {
     }
   ]
 
-  const ctaData = ["All", "Maintainance services", "Work wear & Uniforms"]
   const [hideCaro, setHideCaro] = useState(false)
   
 
@@ -54,38 +49,38 @@ function App() {
   return (
     <>
       <Header setHideCaro={setHideCaro} />
+      <Products />
+      <Shop />
 
-      <div className='flex justify-center'>
-        <FacultyText />
-      </div>
-
-
-      <div className='flex ml-4 sm:ml-0 sm:justify-center flex-wrap my-2 border-b-2 pb-2'>
-        {ctaData?.map(i => {
-          return <Capsule title={i} />
-        })}
-      </div>
-
-      <Menu />
-      <Navtabs />
-
-      {!hideCaro && <Carousel />}
-
-
-      <div className='mx-2 my-3'>
-        <div className='ml-2'>Recent</div>
-        <div className='flex flex-wrap'>
-          <Cards />
-        </div>
-        <div className='mt-6 ml-2'>All Categories</div>
-        <div className='flex flex-wrap'>
-          {cardsArr?.map(i => {
-            return <Cards />
+       {/* overlay div */}
+       <div className='mx-4 mb-20 mt-5'>
+        <div className='flex ml-[12px]'>
+          {overlayArr?.map(item => {
+            return <CardOverlay title={item} />
           })}
         </div>
       </div>
 
-      <div className='mx-4 my-3'>
+
+      {!hideCaro && <Carousel />}
+
+
+        {/* categories */}
+        <div className='mx-4 mb-10 mt-5'>
+        <div className='ml-2 flex justify-between mx-4 mt-3'>
+          <p className='font-medium text-[22px]'>Explore Popular Categories</p>
+          <p className='text-[#4D79EB] cursor-pointer'>View all</p>
+        </div>
+        <div className='flex overflow-auto mt-5'>
+          {categoriesData?.map(i => {
+            return <Categories data={i} />
+          })}
+        </div>
+      </div>
+
+
+
+      <div className='mx-4 mb-10 mt-5'>
         <div className='ml-2 flex justify-between mx-4 mt-3'>
           <p className='font-medium text-[22px]'>Trending Auctions</p>
           <p className='text-[#4D79EB] cursor-pointer	'>View all</p>
@@ -98,9 +93,7 @@ function App() {
         </div>
       </div>
 
-
-
-      <div className='mx-4 my-3'>
+      <div className='mx-4 mb-10 mt-5'>
         <div className='ml-2 flex justify-between mx-4 mt-3'>
           <p className='font-medium text-[22px]'>Featured Products</p>
           <p className='text-[#4D79EB] cursor-pointer	'>View all</p>
@@ -114,8 +107,7 @@ function App() {
       </div>
 
 
-
-      <div className='mx-4 my-3'>
+      <div className='mx-4 mb-10 mt-5'>
         <div className='ml-2 flex justify-between mx-4 mt-3'>
           <p className='font-medium text-[22px]'>Featured Services</p>
           <p className='text-[#4D79EB] cursor-pointer'>View all</p>
@@ -128,48 +120,15 @@ function App() {
         </div>
       </div>
 
-
-      {/* product listing page */}
-      <div className='mx-4 my-3'>
-
-        <div className='flex flex-wrap ml-[12px]'>
-          {productArr?.map(i => {
-            return <Auctions />
-          })}
-        </div>
-      </div>
+      
+     
 
 
-
-
-
-      {/* overlay div */}
-      <div className='mx-4 my-3'>
-        <div className='flex ml-[12px]'>
-          {overlayArr?.map(item => {
-            return <CardOverlay title={item} />
-          })}
-        </div>
-      </div>
-
-
-
-      {/* categories */}
-      <div className='mx-4 my-3'>
-        <div className='ml-2 flex justify-between mx-4 mt-3'>
-          <p className='font-medium text-[22px]'>Explore Popular Categories</p>
-          <p className='text-[#4D79EB] cursor-pointer'>View all</p>
-        </div>
-        <div className='flex overflow-auto mt-5'>
-          {categoriesData?.map(i => {
-            return <Categories data={i} />
-          })}
-        </div>
-      </div>
+    
 
 
       {/* featured events */}
-      <div className='mx-4 my-3'>
+      <div className='mx-4 mb-20 mt-5'>
         <div className='ml-2 flex justify-between mx-4 mt-3'>
           <p className='font-medium text-[22px]'>Featured Events</p>
         </div>
